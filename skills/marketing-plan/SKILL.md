@@ -1,5 +1,5 @@
 ---
-name: plan
+name: marketing-plan
 version: 1.0.0
 description: When the user needs to build a comprehensive marketing plan for a client, a company they advise, or their own product. Also use when the user mentions "marketing plan," "growth plan," "GTM plan," "go-to-market plan," "AARRR plan," "90-day marketing plan," "12-month marketing roadmap," "fractional CMO plan," "fCMO plan," or wants a "comprehensive marketing strategy document." Generates an exhaustive 13-section plan structured by AARRR (Acquisition, Activation, Retention, Referral, Revenue), customized to the client's current budget, team, and stage, mapped to future funding milestones, cross-referenced with the 139-idea marketing-ideas library and the 17-section audit-marketing rubric, with a full marketing operations stack showing which skills and MCP/API integrations execute each part. Outputs a Notion-paste-ready markdown document. For scoring current state, see audit-marketing. For positioning before planning, see positioning. For stage-specific deep work, see onboarding, signup, emails, referrals, pricing.
 ---
@@ -25,13 +25,13 @@ Invoke this skill when:
 ## How this skill is invoked
 
 ```
-/plan {client-name-or-domain}
+/marketing-plan {client-name-or-domain}
 ```
 
 Examples:
-- `/plan olo.app`
-- `/plan acme-saas`
-- `/plan` (will prompt for client name)
+- `/marketing-plan olo.app`
+- `/marketing-plan acme-saas`
+- `/marketing-plan` (will prompt for client name)
 
 On invocation, the skill auto-detects whether this is a new plan or an in-progress one:
 - If `~/marketing-plans/{client-slug}/` exists with a `research.md` or any phase markers, **resume** from the last completed phase.
@@ -55,7 +55,7 @@ Present each section's draft in chat. For each section you can:
 - Add observations ("also mention Z")
 - Expand ("go deeper on this")
 
-Save each confirmed section to the progress file as you go. The skill is resumable — if interrupted, run `/plan client-name` again to pick up at the next unfinished section.
+Save each confirmed section to the progress file as you go. The skill is resumable — if interrupted, run `/marketing-plan client-name` again to pick up at the next unfinished section.
 
 ### Phase 3 — FINALIZE (compile + verify + publish)
 
