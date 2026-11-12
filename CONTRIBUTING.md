@@ -35,7 +35,7 @@ Optional frontmatter fields: `license` (default: MIT), `metadata` (author, versi
 
 - **Directory name**: lowercase, hyphens only (e.g., `emails`)
 - **Name field**: must match directory name exactly
-- **Description**: 1-1024 characters, include trigger phrases
+- **Description**: 1-500 characters: what the skill does, when to use it, and which related skill to use instead
 
 ### 4. Structure your skill
 
@@ -78,16 +78,20 @@ This library is open source and contributions are welcome from **anyone — incl
 
 The maintainer holds final editorial control and may edit or cut anything for neutrality and accuracy. Core skills stay editorially independent: sponsorship and contributions add content, they never buy a recommendation. Full program rules and boundaries — the tool taxonomy, what sponsorship buys and never buys, disclosure, and the partner lifecycle — are in [`tools/PARTNERS.md`](tools/PARTNERS.md).
 
+### Adding an integration guide for your own tool
+
+Makers are welcome to add a neutral guide to [`tools/integrations/`](tools/integrations/). It has to clear the [usefulness bar](tools/PARTNERS.md#toolsintegrations-spec-any-tool-partner-or-not): it lets an agent do the work (endpoints, MCP setup, CLI commands, auth), not sell the tool. Say in your PR that you build or work for the tool. These PRs are reviewed in a monthly batch. A merged guide is listed in the registry; featured placement (the ◆ badge, README and site listing, a launch announcement) comes with the [partner program](https://marketing-skills.com/sponsorship).
+
 ## Submitting Your Contribution
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/new-skill-name`)
 3. Make your changes
 4. Test locally with an AI agent
-5. Submit a pull request using the appropriate template:
-   - [New Skill](?template=new-skill.md)
-   - [Skill Update](?template=skill-update.md)
-   - [Documentation](?template=documentation.md)
+5. Submit a pull request using the appropriate template (append `?template=<name>.md` to the PR URL to pre-fill it):
+   - [New Skill](.github/PULL_REQUEST_TEMPLATE/new-skill.md) — `?template=new-skill.md`
+   - [Skill Update](.github/PULL_REQUEST_TEMPLATE/skill-update.md) — `?template=skill-update.md`
+   - [Documentation](.github/PULL_REQUEST_TEMPLATE/documentation.md) — `?template=documentation.md`
 
 ## Skill Quality Checklist
 
