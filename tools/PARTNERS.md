@@ -19,7 +19,7 @@ Every tool in [REGISTRY.md](REGISTRY.md) is exactly one of these:
 |---|---|---|---|---|---|
 | **Tool integration** | A neutral integration guide for a real marketing tool with a programmatic surface | Anyone (incl. non-partners) can contribute one via PR | none | none required | Listed in the Tool Index / By Category |
 | **◆ Verified Partner** | A tool whose maker funds the library (Skill or Category Partner) | Vetted, application-only, paid | ◆ | Disclosure header in its integration guide + ◆ in the registry + entry in `partners.json` | Verified Partners section + README + site + launch announcement |
-| **House tool** | A tool built by the maintainer (e.g. Truelist) | The repo author | (noted) | **Stricter** than a partner — its guide states the repo author owns the tool | Held as a category House Tool; that slot is not for sale |
+| **House tool** | A tool built by the maintainer (e.g. Truelist, Magister) | The repo author | (noted) | **Stricter** than a partner — its guide states the repo author owns the tool | Held as a category House Tool; that slot is not for sale |
 
 A partner integration is the *same* neutral integration guide as any other tool, plus disclosure and placement. It is not a different kind of content — it earns no softer editorial treatment.
 
@@ -37,6 +37,7 @@ A partner integration is the *same* neutral integration guide as any other tool,
 - Exclusivity over what agents recommend. Category exclusivity is a *sponsorship-slot* exclusivity, never a recommendation exclusivity — a skill may still name a competitor when it's the right answer.
 - Removal or demotion of any other tool. Partner entries are additive.
 - A claim of "best in category." The badge means "paid, disclosed, vetted for fit."
+- A longer description inside a skill. Every tool a skill names, partner or not, gets the same two short clauses: what it is and when to reach for it. Proposed wording is checked with the [tool awareness eval](../evals/tool-awareness/README.md) before it ships.
 
 ## Tiers (summary)
 
@@ -90,7 +91,19 @@ Plus a ◆ marker in [REGISTRY.md](REGISTRY.md) and an entry in [`../partners.js
 
 ## `tools/integrations/` spec (any tool, partner or not)
 
-**What qualifies:** a real marketing tool with a programmatic surface an agent can use — an API, MCP server, and/or CLI. Neutral integrations are welcome from anyone via PR.
+**What qualifies:** a real marketing tool with a programmatic surface an agent can use — an API, MCP server, and/or CLI. Neutral integrations are welcome from anyone via PR, including the tool's own makers.
+
+**The usefulness bar.** A guide earns its place by letting an agent *do the work*: real endpoints, MCP setup, CLI commands, auth steps, and the operations a marketer would actually run. Feature tours, pricing pitches, comparison claims, and "why choose us" copy are cut. A guide that's mostly marketing gets one request to trim, then is closed. A tool that duplicates what an existing guide already covers needs to say what an agent can do with it that it couldn't before.
+
+**Makers disclose in the PR.** If you build or work for the tool, say so in the pull request description. The guide itself stays neutral and carries no disclosure header — that header is reserved for Verified Partners.
+
+**What a guide can't include.** No "contributed by the maker" or similar lines inside the guide. No tracking links (`utm_` parameters, ref or affiliate codes). No steps that install the tool's own skill, plugin, or agent package. No edits to files under `skills/` to mention the tool. Guides must also follow the sales-outbound rules in [`REGISTRY.md`](REGISTRY.md): no LinkedIn scraping with logged-in accounts, cookies, or fake profiles, and no Google Maps scrapers.
+
+**Review cadence.** Neutral integration PRs are reviewed in a monthly batch. Verified Partner guides follow the partner lifecycle above and are reviewed as part of onboarding.
+
+**Upkeep.** Guides are checked quarterly. A non-partner guide whose API, docs, or tool has gone away gets an issue and 30 days to fix, then is removed. Partner guides are kept current as part of the agreement.
+
+**Listed vs featured.** A merged neutral guide is *listed*: it lives in `tools/integrations/` and the registry, and agents find it when the job calls for it. *Featured* placement — the ◆ badge, README and site listing, launch announcement, and faster review — comes with the [partner program](https://marketing-skills.com/sponsorship). Makers whose guide is merged are welcome to apply.
 
 **Format** (match the existing guides, e.g. [`integrations/resend.md`](integrations/resend.md)):
 - `# Tool Name` + a one-line description
